@@ -7,13 +7,27 @@
         <body>
             <h1>Sumar dos números</h1>  
             <p>En este script sumamos dos números</p> 
+            <p>Por favor, introduce dos números:</p>
+            <input id="num1"><br>
+            <input id="num2">
+            <button type="button" onclick="myFunction()">Sumar</button>
+            <p id="sumando"></p>
                 <script>  
-                    window.alert("Introduce dos números")
-                    var n1 = prompt("Dime un numero");
-                    var n2 = prompt("Dime otro numero");
-                    document.write("La suma de "+ n1 + " y "+ n2 + " es: ");
-                    document.write(parseInt(n1)+parseInt(n2));
-
+                function myFunction() {
+                    var x,y,suma,text;
+                    x= document.getElementById("num1").value;
+                    y= document.getElementById("num2").value;
+                    if (isNaN(x) || isNaN(y)) { 
+                        text = "Es necesarios introducir dos números válidos";
+                    } else { 
+                        //si no ponemos parseFloat concatenaría x con y  
+                        suma=parseFloat(x)+parseFloat(y);  
+                        text= suma;  
+                    }  
+                    document.getElementById("sumando").innerHTML = text; 
+                    document.write("La suma de "+ x + " y " + y +" es: ");
+                    document.write (parseInt(x)+parseInt(y)); 
+                    } 
                 </script>  
         </body>
 </html>
